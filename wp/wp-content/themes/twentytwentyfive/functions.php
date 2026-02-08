@@ -161,14 +161,8 @@ endif;
 if ( ! function_exists( 'twentytwentyfive_vercel_analytics' ) ) :
 	/**
 	 * Adds Vercel Web Analytics script to the site.
-// Adds Vercel Speed Insights script to the footer.
-if ( ! function_exists( 'twentytwentyfive_vercel_speed_insights' ) ) :
-	/**
-	 * Adds Vercel Speed Insights tracking script to the footer.
 	 *
 	 * @since Twenty Twenty-Five 1.0
-	 *
-	 * @return void
 	 */
 	function twentytwentyfive_vercel_analytics() {
 		?>
@@ -180,6 +174,14 @@ if ( ! function_exists( 'twentytwentyfive_vercel_speed_insights' ) ) :
 	}
 endif;
 add_action( 'wp_head', 'twentytwentyfive_vercel_analytics' );
+
+// Adds Vercel Speed Insights script to the footer.
+if ( ! function_exists( 'twentytwentyfive_vercel_speed_insights' ) ) :
+	/**
+	 * Adds Vercel Speed Insights tracking script to the footer.
+	 *
+	 * @since Twenty Twenty-Five 1.0
+	 */
 	function twentytwentyfive_vercel_speed_insights() {
 		?>
 		<script>
