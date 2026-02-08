@@ -156,3 +156,23 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
+
+// Adds Vercel Speed Insights script to the footer.
+if ( ! function_exists( 'twentytwentyfive_vercel_speed_insights' ) ) :
+	/**
+	 * Adds Vercel Speed Insights tracking script to the footer.
+	 *
+	 * @since Twenty Twenty-Five 1.0
+	 *
+	 * @return void
+	 */
+	function twentytwentyfive_vercel_speed_insights() {
+		?>
+		<script>
+			window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+		</script>
+		<script defer src="/_vercel/speed-insights/script.js"></script>
+		<?php
+	}
+endif;
+add_action( 'wp_footer', 'twentytwentyfive_vercel_speed_insights' );
